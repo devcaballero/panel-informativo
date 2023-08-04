@@ -1,0 +1,65 @@
+/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+/* styles.css */
+
+/* Apply the Roboto font to the entire application */
+body {
+    font-family: 'Roboto', sans-serif;
+  }
+  
+  /* Optionally, apply the Poppins font to specific elements */
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+  }
+  
+
+/* Estilo para tu mat-card específico */
+.card {
+  align-items: center;
+  height: 120px;
+  width: 150px;
+  padding: 5px;
+  background-color: #242424 !important;
+  border-radius: 5px;
+  border: 4px solid #5a5c5a !important;
+}
+
+.temperature {
+  font-size: 22px;
+  font-weight: bold;
+  margin: 1px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-decoration: underline;
+  color: #48db77; /* Soft blue color for the temperature */
+}
+
+.value {
+  font-size: 18px;
+  color: #ffffff; /* Soft green color for value1 and value2 */
+  margin: 1px 0;
+  margin-bottom: 1px;
+}
+
+.value-temp {
+  font-size: 26px;
+  color: #ffffff; /* Soft green color for value1 and value2 */
+  margin: 1px;
+  margin-top: 5px;
+}
+
+.fecha-actual {
+  font-size: 22px;
+  color: #ffffff; /* Soft blue color for the date */
+  margin-bottom: 10px; /* Ajusta el margen inferior según tu preferencia */
+  margin-top: 5px;
+}
+
+/* Estilo para el párrafo en letra pequeña */
+.small-text {
+  font-size: 20px;
+  margin-bottom: 5px;
+  margin-top: 10px;
+  color: #ffffff; 
+}
+

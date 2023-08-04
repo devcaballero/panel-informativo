@@ -1,0 +1,70 @@
+@font-face {
+  font-family: 'DS-DIGII';
+  src: url('../assets/DS-DIGII.TTF') format('truetype');
+}
+
+h1 {
+  font-size: 32px;
+  color: #ffffff; /* Soft green color */
+  margin-bottom: 1px;
+  text-decoration: underline;
+}
+
+.container {
+  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  background-color: #000000; /* Soft blue-gray color */
+  min-height: 100vh
+}
+
+/* Agregamos la clase "table-responsive" para hacer que la tabla sea responsive */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 10px;
+}
+
+.table {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.table td {
+  flex: 0 0 33%;
+  max-width: 33%;
+}
+
+
+/* .clock {
+  font-size: 24px;
+  color: #ffffff;
+  background-color: #3c3d3d;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  text-align: center;
+} */
+
+/* Aplicar la fuente a los elementos con la clase "vintage-clock" */
+.vintage-clock {
+  font-family: 'DS-DIGII', monospace;
+  font-size: 60px;
+  color: #46db46;
+  background-color: #000000;
+  padding:1px;
+  border: 2px solid #5a5c5a;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  margin: 1px;
+  width: 225px;
+  align-self: center;
+}
+
+
+
