@@ -98,3 +98,47 @@ Before we get started, keep in mind:
 [info] +  Uploaded service account JSON to GitHub as secret FIREBASE_SERVICE_ACCOUNT_PANEL_INFORMATIVO. 
 [info] i  You can manage your secrets at https://github.com/devcaballero/panel-informativo-front/settings/secrets. 
 [info] 
+[debug] [2023-08-05T04:36:25.657Z] ----------------------------------------------------------------------
+[debug] [2023-08-05T04:36:25.659Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\petruska\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init hosting
+[debug] [2023-08-05T04:36:25.660Z] CLI Version:   12.4.7
+[debug] [2023-08-05T04:36:25.660Z] Platform:      win32
+[debug] [2023-08-05T04:36:25.661Z] Node Version:  v16.16.0
+[debug] [2023-08-05T04:36:25.662Z] Time:          Sat Aug 05 2023 01:36:25 GMT-0300 (hora estándar de Argentina)
+[debug] [2023-08-05T04:36:25.663Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-08-05T04:36:25.761Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-08-05T04:36:25.761Z] > authorizing via signed-in user (claudiocaballero.dev@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Users\petruska\Documents\front\panel-informativo-front
+
+Before we get started, keep in mind:
+
+  * You are initializing within an existing Firebase project directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2023-08-05T04:36:33.502Z] Using project from CLI flag: panel-informativo
+[debug] [2023-08-05T04:36:33.505Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/panel-informativo [none]
+[debug] [2023-08-05T04:36:33.925Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/panel-informativo 200
+[debug] [2023-08-05T04:36:33.926Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/panel-informativo {"projectId":"panel-informativo","projectNumber":"67666095644","displayName":"panel-informativo","name":"projects/panel-informativo","resources":{"hostingSite":"panel-informativo"},"state":"ACTIVE","etag":"1_def1dcf1-056a-4edf-beb5-203d7953f780"}
+[info] i  Using project panel-informativo (panel-informativo) 
+[info] 
+=== Hosting Setup
+[info] 
+[info] Your public directory is the folder (relative to your project directory) that
+[info] will contain Hosting assets to be uploaded with firebase deploy. If you
+[info] have a build process for your assets, use your build's output directory.
+[info] 
