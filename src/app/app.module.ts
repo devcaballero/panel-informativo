@@ -51,6 +51,7 @@ import { PhillipboxComponent } from './phillipbox/phillipbox.component';
     HttpClientModule,
     MatProgressSpinnerModule,
     MatCardModule,
+    
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
