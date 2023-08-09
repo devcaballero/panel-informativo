@@ -12,7 +12,7 @@ export class NaftaComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://localhost:8080/nafta').subscribe(
+    this.http.get<any>('http://ec2-54-157-155-172.compute-1.amazonaws.com:8080/nafta').subscribe(
       (data) => {
         this.nafta = data.nafta;
       },

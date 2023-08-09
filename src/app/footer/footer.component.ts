@@ -16,7 +16,7 @@ export class FooterComponent implements OnInit {
   }
 
   getVisitorCount(): void {
-    this.http.get<number>('http://localhost:8080/visitors').subscribe(
+    this.http.get<number>('http://ec2-54-157-155-172.compute-1.amazonaws.com:8080/visitors').subscribe(
       (count) => {
         this.visitorCount = count;
       },
