@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { DolarBlueServiceService } from './dolar-blue-service.service';
+import { DolarBlueService } from './dolar-blue.service';
 
 describe('DolarBlueServiceService', () => {
-  let service: DolarBlueServiceService;
+  let service: DolarBlueService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(DolarBlueServiceService);
+    service = TestBed.inject(DolarBlueService);
   });
 
   it('should be created', () => {

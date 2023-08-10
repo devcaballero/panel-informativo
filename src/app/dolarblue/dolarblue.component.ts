@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { DolarBlueService } from '../dolar-blue.service';
 
 @Component({
   selector: 'app-dolarblue',
@@ -9,16 +9,14 @@ import { HttpClient } from '@angular/common/http';
 export class DolarblueComponent implements OnInit {
   blue: number | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private dolarBlueService: DolarBlueService) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://ec2-54-157-155-172.compute-1.amazonaws.com:8080/dolar').subscribe(
-      (data) => {
-        this.blue = data.blue;
-      },
-      (error) => {
-        console.log('Error al obtener los datos:', error);
-      }
-    );
+    this.dolarBlueService.getDolarBlueValue().then((blueValue: any) => {
+      this.blue = blueValue;
+    });
   }
 }
+
+
+
