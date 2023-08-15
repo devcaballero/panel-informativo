@@ -12,7 +12,7 @@ export class InflacionanualComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://ec2-54-157-155-172.compute-1.amazonaws.com:8080/inflacionanualizada').subscribe(
+    this.http.get<any>('https://price-webscraper.onrender.com/inflacionanualizada').subscribe(
       (data) => {
         this.inflacionanualizada = data.inflacionanual;
       },

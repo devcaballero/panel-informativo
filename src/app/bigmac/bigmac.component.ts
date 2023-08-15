@@ -6,13 +6,22 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './bigmac.component.html',
   styleUrls: ['./bigmac.component.css']
 })
+
 export class BigmacComponent implements OnInit {
   bigmac: string | undefined;
 
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://ec2-54-157-155-172.compute-1.amazonaws.com:8080/bigmac/').subscribe(
+    // Set up request options including headers
+    const requestOptions = {
+      headers: {
+        // Specify the allowed origins separated by commas
+        'Access-Control-Allow-Origin': 'http://localhost:4200, https://panel-informativo.web.app'
+      }
+    };
+
+    this.http.get<any>('https://price-webscraper.onrender.com/bigmac', requestOptions).subscribe(
       (data) => {
         this.bigmac = data.bigmac;
       },

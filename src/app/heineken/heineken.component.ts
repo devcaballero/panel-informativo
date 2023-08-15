@@ -12,7 +12,7 @@ export class HeinekenComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://ec2-54-157-155-172.compute-1.amazonaws.com:8080/heineken').subscribe(
+    this.http.get<any>('https://price-webscraper.onrender.com/heineken').subscribe(
       (data) => {
         this.heineken = data.heineken;
       },

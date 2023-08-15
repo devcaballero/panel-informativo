@@ -12,7 +12,7 @@ export class OroComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://ec2-54-157-155-172.compute-1.amazonaws.com:8080/oro').subscribe(
+    this.http.get<any>('https://price-webscraper.onrender.com/oro').subscribe(
       (data) => {
         this.gold = data.gold;
       },

@@ -12,7 +12,7 @@ export class PhillipboxComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get<any>('http://ec2-54-157-155-172.compute-1.amazonaws.com:8080/phillipbox').subscribe(
+    this.http.get<any>('https://price-webscraper.onrender.com/phillipbox').subscribe(
       (data) => {
         this.phillipbox = data.phillipbox;
       },
