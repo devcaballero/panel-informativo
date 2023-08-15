@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-minimosube',
@@ -9,16 +9,20 @@ import { HttpClient } from '@angular/common/http';
 export class MinimosubeComponent implements OnInit {
   minimosube: string | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.http.get<any>('https://price-webscraper.onrender.com/minimosube').subscribe(
+    const url = 'https://price-webscraper.onrender.com/minimosube';
+    this.apiService.getData(url).subscribe(
       (data) => {
-        this.minimosube = data.minimosube;
+        this.minimosube = data;
       },
       (error) => {
-        console.log('Error al obtener los datos:', error);
+        console.log('Error al obtener el valor de la sube:', error);
       }
     );
   }
+
+
+
 }

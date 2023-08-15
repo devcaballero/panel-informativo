@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-oro',
@@ -9,16 +9,19 @@ import { HttpClient } from '@angular/common/http';
 export class OroComponent implements OnInit {
   gold: string | undefined;
   
-  constructor(private http: HttpClient) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.http.get<any>('https://price-webscraper.onrender.com/oro').subscribe(
+    const url = 'https://price-webscraper.onrender.com/oro';
+    this.apiService.getData(url).subscribe(
       (data) => {
-        this.gold = data.gold;
+        this.gold = data;
       },
       (error) => {
-        console.log('Error al obtener la temperatura.', error);
+        console.log('Error al obtener el precio del oro:', error);
       }
     );
   }
+
+
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-bigmac',
@@ -10,24 +10,18 @@ import { HttpClient } from '@angular/common/http';
 export class BigmacComponent implements OnInit {
   bigmac: string | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    // Set up request options including headers
-    const requestOptions = {
-      headers: {
-        // Specify the allowed origins separated by commas
-        'Access-Control-Allow-Origin': 'http://localhost:4200, https://panel-informativo.web.app'
-      }
-    };
-
-    this.http.get<any>('https://price-webscraper.onrender.com/bigmac', requestOptions).subscribe(
+    const url = 'https://price-webscraper.onrender.com/bigmac';
+    this.apiService.getData(url).subscribe(
       (data) => {
-        this.bigmac = data.bigmac;
+        this.bigmac = data;
       },
       (error) => {
-        console.log('Error al obtener los datos:', error);
+        console.log('Error al obtener el precio del bigmac:', error);
       }
     );
   }
+
 }

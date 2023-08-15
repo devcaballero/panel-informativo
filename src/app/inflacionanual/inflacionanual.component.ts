@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-inflacionanual',
@@ -9,16 +9,18 @@ import { HttpClient } from '@angular/common/http';
 export class InflacionanualComponent implements OnInit {
   inflacionanualizada: string | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.http.get<any>('https://price-webscraper.onrender.com/inflacionanualizada').subscribe(
+    const url = 'https://price-webscraper.onrender.com/inflacionanualizada';
+    this.apiService.getData(url).subscribe(
       (data) => {
-        this.inflacionanualizada = data.inflacionanual;
+        this.inflacionanualizada = data;
       },
       (error) => {
-        console.log('Error al obtener los datos:', error);
+        console.log('Error al obtener los datos de la inflacion anual:', error);
       }
     );
   }
+
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-cocacola',
@@ -9,15 +9,16 @@ import { HttpClient } from '@angular/common/http';
 export class CocacolaComponent implements OnInit {
   cocacola: string | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.http.get<any>('https://price-webscraper.onrender.com/cocacola').subscribe(
+    const url = 'https://price-webscraper.onrender.com/cocacola';
+    this.apiService.getData(url).subscribe(
       (data) => {
-        this.cocacola = data.cocacola;
+        this.cocacola = data;
       },
       (error) => {
-        console.log('Error al obtener los datos:', error);
+        console.log('Error al obtener el precio de la coca de litro y medio:', error);
       }
     );
   }

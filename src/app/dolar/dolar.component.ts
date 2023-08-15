@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-dolar',
@@ -7,17 +7,18 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./dolar.component.css']
 })
 export class DolarComponent implements OnInit {
-  oficial: number | undefined;
+  oficial: string | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.http.get<any>('https://price-webscraper.onrender.com/dolaroficial').subscribe(
+    const url = 'https://price-webscraper.onrender.com/dolaroficial';
+    this.apiService.getData(url).subscribe(
       (data) => {
-        this.oficial = data.oficial;
+        this.oficial = data.replace(".", ",");
       },
       (error) => {
-        console.log('Error al obtener los datos:', error);
+        console.log('Error al obtener la cotizacion del dolar oficial:', error);
       }
     );
   }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-nafta',
@@ -9,16 +10,19 @@ import { HttpClient } from '@angular/common/http';
 export class NaftaComponent implements OnInit {
   nafta: string | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.http.get<any>('https://price-webscraper.onrender.com/nafta').subscribe(
+    const url = 'https://price-webscraper.onrender.com/naftasuper';
+    this.apiService.getData(url).subscribe(
       (data) => {
-        this.nafta = data.nafta;
+        this.nafta = data;
       },
       (error) => {
-        console.log('Error al obtener los datos:', error);
+        console.log('Error al obtener el valor del litro de nafta super:', error);
       }
     );
   }
+
+
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-forrosprime',
@@ -9,16 +9,18 @@ import { HttpClient } from '@angular/common/http';
 export class ForrosprimeComponent implements OnInit {
   forros: string | undefined;
 
-  constructor(private http: HttpClient) { }
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.http.get<any>('https://price-webscraper.onrender.com/forrosprime').subscribe(
+    const url = 'https://price-webscraper.onrender.com/forrosprime';
+    this.apiService.getData(url).subscribe(
       (data) => {
-        this.forros = data.forros;
+        this.forros = data;
       },
       (error) => {
-        console.log('Error al obtener los datos:', error);
+        console.log('Error al obtener el precio de prime:', error);
       }
     );
   }
+  
 }

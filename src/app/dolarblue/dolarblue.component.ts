@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../api.service';
+
 
 @Component({
   selector: 'app-dolarblue',
@@ -7,17 +8,19 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./dolarblue.component.css']
 })
 export class DolarblueComponent implements OnInit {
-  blue: number | undefined;
+  blue: string | undefined;
 
-  constructor(private http: HttpClient) { }
+
+  constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    this.http.get<any>('https://price-webscraper.onrender.com/dolaroficial').subscribe(
+    const url = 'https://price-webscraper.onrender.com/dolarblue';
+    this.apiService.getData(url).subscribe(
       (data) => {
-        this.blue = data.oficial;
+        this.blue = data;
       },
       (error) => {
-        console.log('Error al obtener los datos:', error);
+        console.log('Error al obtener la cotizacion del dolar blue:', error);
       }
     );
   }

@@ -1,5 +1,4 @@
 // bitcoin.component.ts
-
 import { Component, OnInit } from '@angular/core';
 import { BitcoinService } from '../bitcoin.service';
 
