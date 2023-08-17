@@ -1,30 +1,26 @@
 import { Component, OnInit } from '@angular/core';
-import { TemperatureService } from '../temperature.service';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-temperature',
   templateUrl: './temperature.component.html',
-  styleUrls: ['./temperature.component.css'],
-  template: `
-    <div *ngIf="weatherData">
-      Temperatura actual: {{ weatherData }}
-    </div>
-  `
+  styleUrls: ['./temperature.component.css']
 })
 export class TemperatureComponent implements OnInit {
   
-  temperature: number | undefined;
+  temperature: string | undefined;
+
+  constructor(private apiService: ApiService) { }
 
 
-  constructor(private temperatureService: TemperatureService) { }
-
-  ngOnInit() {
-    this.temperatureService.getTimeline().subscribe(
-      (weatherData) => {
-        this.temperature = weatherData;
+  ngOnInit(): void {
+    const url = 'https://price-webscraper.onrender.com/temperatura';
+    this.apiService.getData(url).subscribe(
+      (data) => {
+        this.temperature = data.substring(0, 4);
       },
       (error) => {
-        console.error('Error fetching weather data:', error);
+        console.log('Error al obtener la temperatura:', error);
       }
     );
   }

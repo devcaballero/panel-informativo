@@ -41,7 +41,7 @@ export class AppComponent implements OnInit {
   updateClock(): void {
     setInterval(() => {
       const fecha = new Date();
-      const hora = this.datePipe.transform(fecha, 'HH:mm:ss', 'es');
+      const hora = this.datePipe.transform(fecha, 'HH:mm:ss', 'America/Argentina/Buenos_Aires');
       this.horaActual = hora || 'Hora no disponible';
     }, 1000);
   }
