@@ -15,7 +15,7 @@ export class FloresComponent implements OnInit {
     const url = 'https://price-webscraper.onrender.com/johnnyred';
     this.apiService.getData(url).subscribe(
       (data) => {
-        this.johnnyred = data;
+        this.johnnyred = data.replace(",", "");
       },
       (error) => {
         console.log('Error al obtener el precio de johnny red 750ml:', error);
