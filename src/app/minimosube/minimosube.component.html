@@ -3,8 +3,11 @@
     <mat-card class="card">
       <div class="container">
         <p class="temperature">SUBE</p>
-        <p class="value">Minimo (Col)</p>
+        <p class="value">Min. Col.(AMBA)</p>
+        <p *ngIf="isLoading; else goldData" class="loading-dots">...</p>
+        <ng-template #goldData>
         <p class="value">${{ minimosube }}</p>
+      </ng-template>
       </div>
     </mat-card>
   </div>

@@ -4,7 +4,10 @@
       <div class="container">
         <p class="temperature">Oro</p>
         <p class="value">USD/Onza</p>
-        <p class="value">{{ gold }}</p>
+        <p *ngIf="isLoading; else goldData" class="loading-dots">...</p>
+        <ng-template #goldData>
+          <p class="value">{{ gold }}</p>
+        </ng-template>
       </div>
     </mat-card>
   </div>

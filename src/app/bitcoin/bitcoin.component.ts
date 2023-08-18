@@ -9,6 +9,7 @@ import { BitcoinService } from '../bitcoin.service';
 })
 export class BitcoinComponent implements OnInit {
   bitcoinPrice: number | undefined;
+  isLoading: boolean = true;
 
   constructor(private bitcoinService: BitcoinService) { }
 

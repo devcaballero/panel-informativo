@@ -9,6 +9,7 @@ import { ApiService } from '../api.service';
 })
 export class DolarblueComponent implements OnInit {
   blue: string | undefined;
+  isLoading: boolean = true;
 
 
   constructor(private apiService: ApiService) { }
@@ -18,12 +19,13 @@ export class DolarblueComponent implements OnInit {
     this.apiService.getData(url).subscribe(
       (data) => {
         this.blue = data;
+        this.isLoading = false; 
       },
       (error) => {
         console.log('Error al obtener la cotizacion del dolar blue:', error);
+        this.isLoading = false; 
       }
     );
   }
+
 }
-
-

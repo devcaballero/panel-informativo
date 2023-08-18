@@ -8,6 +8,7 @@ import { ApiService } from '../api.service';
 })
 export class InflacionanualComponent implements OnInit {
   inflacionanualizada: string | undefined;
+  isLoading: boolean = true;
 
   constructor(private apiService: ApiService) { }
 
@@ -16,11 +17,12 @@ export class InflacionanualComponent implements OnInit {
     this.apiService.getData(url).subscribe(
       (data) => {
         this.inflacionanualizada = data;
+        this.isLoading = false; // Marcar como no cargando cuando se obtiene la información
       },
       (error) => {
         console.log('Error al obtener los datos de la inflacion anual:', error);
+        this.isLoading = false; // Marcar como no cargando en caso de error también
       }
     );
   }
-
 }

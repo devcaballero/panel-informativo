@@ -8,6 +8,7 @@ import { ApiService } from '../api.service';
 })
 export class NaftaComponent implements OnInit {
   nafta: string | undefined;
+  isLoading: boolean = true;
 
   constructor(private apiService: ApiService) { }
 
@@ -16,12 +17,12 @@ export class NaftaComponent implements OnInit {
     this.apiService.getData(url).subscribe(
       (data) => {
         this.nafta = data;
-      },
-      (error) => {
-        console.log('Error al obtener el valor del litro de nafta super:', error);
-      }
-    );
+       this.isLoading = false; // Marcar como no cargando cuando se obtiene la información
+    },
+    (error) => {
+    console.log('Error al obtener el valor del litro de nafta super:', error);
+    this.isLoading = false; // Marcar como no cargando en caso de error también
+    }
+  );
   }
-
-
 }

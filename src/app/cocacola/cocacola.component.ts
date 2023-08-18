@@ -8,6 +8,7 @@ import { ApiService } from '../api.service';
 })
 export class CocacolaComponent implements OnInit {
   cocacola: string | undefined;
+  isLoading: boolean = true;
 
   constructor(private apiService: ApiService) { }
 
@@ -16,9 +17,11 @@ export class CocacolaComponent implements OnInit {
     this.apiService.getData(url).subscribe(
       (data) => {
         this.cocacola = data;
+        this.isLoading = false; 
       },
       (error) => {
         console.log('Error al obtener el precio de la coca de litro y medio:', error);
+        this.isLoading = false; 
       }
     );
   }

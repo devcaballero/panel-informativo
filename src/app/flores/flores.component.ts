@@ -8,6 +8,7 @@ import { ApiService } from '../api.service';
 })
 export class FloresComponent implements OnInit {
   johnnyred: string | undefined;
+  isLoading: boolean = true;
 
   constructor(private apiService: ApiService) { }
 
@@ -16,11 +17,12 @@ export class FloresComponent implements OnInit {
     this.apiService.getData(url).subscribe(
       (data) => {
         this.johnnyred = data.replace(",", "");
+        this.isLoading = false; 
       },
       (error) => {
         console.log('Error al obtener el precio de johnny red 750ml:', error);
+        this.isLoading = false; 
       }
     );
   }
-  
 }

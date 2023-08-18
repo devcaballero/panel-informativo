@@ -8,6 +8,7 @@ import { ApiService } from '../api.service';
 })
 export class MercaComponent implements OnInit {
   fernet: string | undefined;
+  isLoading: boolean = true;
 
   constructor(private apiService: ApiService) { }
 
@@ -16,9 +17,11 @@ export class MercaComponent implements OnInit {
     this.apiService.getData(url).subscribe(
       (data) => {
         this.fernet = data;
+        this.isLoading = false; // Marcar como no cargando cuando se obtiene la información
       },
       (error) => {
-        console.log('Error al obtener el precio del fernet:', error);
+      console.log('Error al obtener el precio del fernet:', error);
+      this.isLoading = false; // Marcar como no cargando en caso de error también
       }
     );
   }

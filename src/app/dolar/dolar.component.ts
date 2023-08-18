@@ -8,6 +8,7 @@ import { ApiService } from '../api.service';
 })
 export class DolarComponent implements OnInit {
   oficial: string | undefined;
+  isLoading: boolean = true;
 
   constructor(private apiService: ApiService) { }
 
@@ -16,10 +17,13 @@ export class DolarComponent implements OnInit {
     this.apiService.getData(url).subscribe(
       (data) => {
         this.oficial = data.replace(".", ",");
+        this.isLoading = false; 
       },
       (error) => {
         console.log('Error al obtener la cotizacion del dolar oficial:', error);
+        this.isLoading = false; 
       }
     );
   }
+
 }
