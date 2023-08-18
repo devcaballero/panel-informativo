@@ -23,6 +23,8 @@ export class AppComponent implements OnInit {
       this.getFechaActual();
     }, 1800000);
 
+    this.setupAutoReload();
+
   }
 
   getFechaActual(): void {
@@ -44,6 +46,15 @@ export class AppComponent implements OnInit {
       const hora = this.datePipe.transform(fecha, 'HH:mm:ss', 'America/Argentina/Buenos_Aires');
       this.horaActual = hora || 'Hora no disponible';
     }, 1000);
+  }
+
+
+  private setupAutoReload(): void {
+    const reloadInterval = 40 * 60 * 1000; // 40 minutos en milisegundos
+
+    setTimeout(() => {
+      window.location.reload();
+    }, reloadInterval);
   }
 
 }
