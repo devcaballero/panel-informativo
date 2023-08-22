@@ -5,7 +5,7 @@
          <p class="temperature">Bigmac</p> 
          <p class="value"></p>
          <p class="value"></p>
-         <p *ngIf="isLoading; else goldData" class="loading-dots">...</p>
+         <p *ngIf="isLoading; else goldData" class="loading-dots"></p>
          <ng-template #goldData>
          <p class="value">${{ bigmac }}</p>
         </ng-template>

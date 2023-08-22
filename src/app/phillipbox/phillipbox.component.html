@@ -4,7 +4,7 @@
       <div class="container">
         <p class="temperature">Phillip M. </p>
         <p class="value">Box</p>
-        <p *ngIf="isLoading; else goldData" class="loading-dots">...</p>
+        <p *ngIf="isLoading; else goldData" class="loading-dots"></p>
         <ng-template #goldData>
         <p class="value">${{ phillipbox }}</p>
       </ng-template>

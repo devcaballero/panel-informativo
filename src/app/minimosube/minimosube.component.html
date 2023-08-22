@@ -4,7 +4,7 @@
       <div class="container">
         <p class="temperature">SUBE</p>
         <p class="value">Boleto Min </p>
-        <p *ngIf="isLoading; else goldData" class="loading-dots">...</p>
+        <p *ngIf="isLoading; else goldData" class="loading-dots"></p>
         <ng-template #goldData>
         <p class="value">${{ minimosube }}(AMBA)</p>
       </ng-template>
