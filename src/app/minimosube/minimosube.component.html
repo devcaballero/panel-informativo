@@ -2,9 +2,8 @@
     <!-- Mostrar los datos obtenidos del servicio -->
     <mat-card class="card">
       <div class="container">
-        <p class="temperature">SUBE</p>
-        <p class="value">Min. Bondi</p>
-        <p class="value">(AMBA)</p>
+        <p class="temperature">Bondi</p>
+        <p class="value">Min. (AMBA)</p>
         <p *ngIf="isLoading; else goldData" class="loading-dots"></p>
         <ng-template #goldData>
         <p class="value">${{ minimosube }}</p>
