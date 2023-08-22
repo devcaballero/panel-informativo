@@ -17,7 +17,13 @@ export class TemperatureComponent implements OnInit {
     const url = 'https://price-webscraper.onrender.com/temperatura';
     this.apiService.getData(url).subscribe(
       (data) => {
-        this.temperature = data.substring(0, 4);
+        const temperature = parseFloat(data); // Convertir la cadena a un número decimal
+        
+        if (temperature > 10) {
+          this.temperature = data.substring(0, 4); // Si es mayor a 10, usar substring de 0 a 4
+        } else {
+          this.temperature = data.substring(0, 3); // Si es menor o igual a 10, usar substring de 0 a 3
+        }
       },
       (error) => {
         console.log('Error al obtener la temperatura:', error);
