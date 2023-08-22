@@ -3,8 +3,7 @@
     <mat-card class="card">
       <div class="container">
          <p class="temperature">Bigmac</p> 
-         <p class="value"></p>
-         <p class="value"></p>
+         <p class="value"><br></p>
          <p *ngIf="isLoading; else goldData" class="loading-dots"></p>
          <ng-template #goldData>
          <p class="value">${{ bigmac }}</p>
