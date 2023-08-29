@@ -13,7 +13,7 @@ export class OroComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    const url = 'https://price-webscraper.onrender.com/oro';
+    const url = 'https://price-webscraper.onrender.com/api/v1/oro';
     this.apiService.getData(url).subscribe(
       (data) => {
         this.gold = data;
