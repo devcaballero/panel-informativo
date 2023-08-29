@@ -13,7 +13,7 @@ export class DolarComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    const url = 'https://price-webscraper.onrender.com/dolaroficial';
+    const url = 'https://price-webscraper.onrender.com/api/v1/dolar-oficial';
     this.apiService.getData(url).subscribe(
       (data) => {
         this.oficial = data.replace(".", ",");

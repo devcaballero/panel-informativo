@@ -13,7 +13,7 @@ export class ForrosprimeComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    const url = 'https://price-webscraper.onrender.com/forrosprime';
+    const url = 'https://price-webscraper.onrender.com/api/v1/forros-prime';
     this.apiService.getData(url).subscribe(
       (data) => {
         this.forros = data;

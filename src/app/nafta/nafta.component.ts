@@ -13,7 +13,7 @@ export class NaftaComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    const url = 'https://price-webscraper.onrender.com/naftasuper';
+    const url = 'https://price-webscraper.onrender.com/api/v1/nafta-super';
     this.apiService.getData(url).subscribe(
       (data) => {
         this.nafta = data;

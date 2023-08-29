@@ -13,7 +13,7 @@ export class MinimosubeComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    const url = 'https://price-webscraper.onrender.com/minimosube';
+    const url = 'https://price-webscraper.onrender.com/api/v1/minimo-sube';
     this.apiService.getData(url).subscribe(
       (data) => {
         this.minimosube = data;

@@ -13,7 +13,7 @@ export class FloresComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    const url = 'https://price-webscraper.onrender.com/johnnyred';
+    const url = 'https://price-webscraper.onrender.com/api/v1/johnny-red';
     this.apiService.getData(url).subscribe(
       (data) => {
         this.johnnyred = data.replace(",", "");

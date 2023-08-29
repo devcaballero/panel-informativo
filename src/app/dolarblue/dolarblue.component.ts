@@ -15,7 +15,7 @@ export class DolarblueComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    const url = 'https://price-webscraper.onrender.com/dolarblue';
+    const url = 'https://price-webscraper.onrender.com/api/v1/dolar-blue';
     this.apiService.getData(url).subscribe(
       (data) => {
         this.blue = data;

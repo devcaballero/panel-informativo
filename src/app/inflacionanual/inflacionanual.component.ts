@@ -13,7 +13,7 @@ export class InflacionanualComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    const url = 'https://price-webscraper.onrender.com/inflacionanualizada';
+    const url = 'https://price-webscraper.onrender.com/api/v1/inflacion-anualizada';
     this.apiService.getData(url).subscribe(
       (data) => {
         this.inflacionanualizada = data;

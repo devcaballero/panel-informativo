@@ -13,7 +13,7 @@ export class MercaComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    const url = 'https://price-webscraper.onrender.com/fernet';
+    const url = 'https://price-webscraper.onrender.com/api/v1/fernet';
     this.apiService.getData(url).subscribe(
       (data) => {
         this.fernet = data;

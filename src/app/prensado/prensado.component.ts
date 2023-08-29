@@ -13,7 +13,7 @@ export class PrensadoComponent implements OnInit {
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    const url = 'https://price-webscraper.onrender.com/inflacionmensual';
+    const url = 'https://price-webscraper.onrender.com/api/v1/inflacion-mensual';
     this.apiService.getData(url).subscribe(
       (data) => {
         this.inflacionmensual = data;

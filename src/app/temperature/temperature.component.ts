@@ -14,7 +14,7 @@ export class TemperatureComponent implements OnInit {
 
 
   ngOnInit(): void {
-    const url = 'https://price-webscraper.onrender.com/temperatura';
+    const url = 'https://price-webscraper.onrender.com/api/v1/temperatura';
     this.apiService.getData(url).subscribe(
       (data) => {
         const temperature = parseFloat(data); // Convertir la cadena a un número decimal
