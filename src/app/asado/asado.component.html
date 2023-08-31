@@ -1,0 +1,13 @@
+<div class="data-container">
+    <!-- Mostrar los datos obtenidos del servicio -->
+    <mat-card class="card">
+      <div class="container">
+         <p class="temperature">Asado</p> 
+         <p class="value">Kg</p>
+         <p *ngIf="isLoading; else goldData" class="loading-dots"></p>
+         <ng-template #goldData>
+         <p class="value">${{ asado }}</p>
+        </ng-template>
+      </div>
+    </mat-card>
+  </div>

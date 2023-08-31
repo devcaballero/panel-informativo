@@ -22,6 +22,7 @@ import { DatePipe } from '@angular/common';
 import { DolarblueComponent } from './dolarblue/dolarblue.component';
 import { FooterComponent } from './footer/footer.component';
 import { PhillipboxComponent } from './phillipbox/phillipbox.component';
+import { AsadoComponent } from './asado/asado.component';
 
 
 
@@ -44,7 +45,8 @@ import { PhillipboxComponent } from './phillipbox/phillipbox.component';
     InflacionanualComponent,
     DolarblueComponent,
     FooterComponent,
-    PhillipboxComponent, 
+    PhillipboxComponent,
+    AsadoComponent, 
   ],
   imports: [
     BrowserModule,
