@@ -1,22 +1,23 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api.service';
 
+
 @Component({
-  selector: 'app-phillipbox',
-  templateUrl: './phillipbox.component.html',
-  styleUrls: ['./phillipbox.component.css']
+  selector: 'app-pan',
+  templateUrl: './pan.component.html',
+  styleUrls: ['./pan.component.css']
 })
-export class PhillipboxComponent implements OnInit {
-  phillipbox: string | undefined;
+export class PanComponent implements OnInit {
+  pan: string | undefined;
   isLoading: boolean = true;
 
   constructor(private apiService: ApiService) { }
 
   ngOnInit(): void {
-    const url = 'https://price-webscraper.onrender.com/api/v1/phillipbox';
+    const url = 'https://price-webscraper.onrender.com/api/v1/promedio-precio-pan';
     this.apiService.getData(url).subscribe(
       (data) => {
-        this.phillipbox = data;
+        this.pan = data;
         this.isLoading = false; // Marcar como no cargando cuando se obtiene la información
       },
       (error) => {

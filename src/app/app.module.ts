@@ -23,6 +23,7 @@ import { DolarblueComponent } from './dolarblue/dolarblue.component';
 import { FooterComponent } from './footer/footer.component';
 import { PhillipboxComponent } from './phillipbox/phillipbox.component';
 import { AsadoComponent } from './asado/asado.component';
+import { PanComponent } from './pan/pan.component';
 
 
 
@@ -46,7 +47,8 @@ import { AsadoComponent } from './asado/asado.component';
     DolarblueComponent,
     FooterComponent,
     PhillipboxComponent,
-    AsadoComponent, 
+    AsadoComponent,
+    PanComponent, 
   ],
   imports: [
     BrowserModule,
